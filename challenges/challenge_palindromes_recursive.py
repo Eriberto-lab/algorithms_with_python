@@ -7,8 +7,7 @@ def is_palindrome_recursive(word, low_index, high_index):
         print("Não é palíndromo")
         return False
 
-    new_word = word[::-1]
-    if word == new_word:
+    if low_index >= high_index:
         return True
 
-    return False
+    return is_palindrome_recursive(word, low_index + 1, high_index - 1)
