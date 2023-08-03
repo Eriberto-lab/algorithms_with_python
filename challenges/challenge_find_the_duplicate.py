@@ -1,11 +1,16 @@
-def find_duplicate(nums=None):
+def is_valid_input(nums):
     if nums is None or isinstance(nums, str):
-        return False
+        return True
 
     if len(set(nums)) == len(nums) or isinstance(nums, (int, float)):
-        return False
+        return True
 
     if any(num < 0 for num in nums):
+        return True
+
+
+def find_duplicate(nums=None):
+    if is_valid_input(nums):
         return False
 
     nums_dict = {}
